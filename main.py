@@ -27,9 +27,6 @@ for step in range(int(DURATION / DT)):
 
     thrust = pid.compute(TARGET_ALTITUDE, sensor_data['position'], DT)
 
-    #lower the thrust clamp
-    thrust = max(0, min(thrust, 150))
-
     state = update_physics(state, thrust, DT)
 
     history['t'].append(t)
