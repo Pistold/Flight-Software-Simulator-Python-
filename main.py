@@ -9,7 +9,7 @@ DT = 0.05
 DURATION = 20.0
 
 state = {'position': 0.0, 'velocity': 0.0}
-pid = PIDController()
+pid = PIDController(kp=2.0, ki=0.5, kd=2.5) 
 
 #create sensors ONCE outside the loop
 pos_sensor = Sensor(noise_std=0.5, bias=0.2, drift_rate=0.005, delay_steps=2)
